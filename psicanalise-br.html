@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicanálise BR | Atendimento em Português no Canadá</title>
+    <meta name="description" content="Atendimento psicanalítico online em português para brasileiros no Canadá. Espaço de escuta e acolhimento com compreensão cultural.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2C5F5D;
+            --primary-light: #4A8B87;
+            --secondary: #D4A574;
+            --bg-cream: #F9F6F1;
+            --bg-darker: #EBE5DC;
+            --text-dark: #1A2F2E;
+            --text-soft: #5A6F6E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(249, 246, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(44, 95, 93, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(74, 139, 135, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(5deg); }
+            50% { transform: translate(-20px, 20px) rotate(-5deg); }
+            75% { transform: translate(20px, 30px) rotate(3deg); }
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-text .highlight {
+            color: var(--primary-light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-text .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: var(--secondary);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-soft);
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(44, 95, 93, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .visual-card {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .visual-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            border-radius: 20px;
+            z-index: -1;
+        }
+        
+        .visual-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .stat-text h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        
+        .stat-text p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 120px 0;
+            background: white;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: var(--bg-darker);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-header h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--text-soft);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            background: var(--bg-cream);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .benefit-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .benefit-card p {
+            color: var(--text-soft);
+            line-height: 1.8;
+        }
+
+        /* What is Psychoanalysis Section */
+        .psychoanalysis-section {
+            padding: 120px 0;
+            background: var(--bg-cream);
+        }
+
+        .psychoanalysis-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .psychoanalysis-content p {
+            font-size: 1.1rem;
+            color: var(--text-soft);
+            margin-bottom: 24px;
+            line-height: 1.9;
+        }
+
+        .psychoanalysis-list {
+            margin: 30px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .psychoanalysis-list li {
+            padding: 12px 0 12px 35px;
+            color: var(--text-soft);
+            font-size: 1.05rem;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .psychoanalysis-list li::before {
+            content: '•';
+            color: var(--primary-light);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+
+        .quote-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary);
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote-box p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .subsection-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 50px 0 24px;
+            font-weight: 600;
+        }
+
+        /* About Me Section */
+        .about-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-wrapper {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .about-text h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .about-text .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text-soft);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-quote {
+            background: var(--bg-cream);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary);
+            margin: 30px 0;
+        }
+
+        .about-quote p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-style: italic;
+            margin: 0;
+        }
+
+        .formation-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 30px 0 16px;
+            font-weight: 600;
+        }
+
+        .formation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .formation-list li {
+            padding: 10px 0;
+            color: var(--text-soft);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 0;
+            background: var(--bg-cream);
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            position: relative;
+            text-align: center;
+        }
+        
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 60%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--secondary) 0%, transparent 100%);
+            z-index: 0;
+        }
+        
+        .step:last-child::before {
+            display: none;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(44, 95, 93, 0.2);
+        }
+        
+        .step h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .step p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 120px 0;
+            background: white;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+        
+        .pricing-card {
+            background: var(--bg-cream);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 3px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--secondary);
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pricing-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .pricing-card .price {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        
+        .pricing-card .price span {
+            font-size: 1.2rem;
+            color: var(--text-soft);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            color: var(--text-soft);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary-light);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pricing-note {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-soft);
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .pricing-card .btn-primary {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-content h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+        
+        .cta-content .btn-primary {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        
+        .cta-content .btn-primary:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-about p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: white;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .step::before {
+                display: none;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Psicanálise BR</div>
+            <a href="#contato" class="nav-cta">Agende sua Sessão</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Psicanálise em português para <span class="highlight">brasileiros no Canadá</span>
+                    </h1>
+                    <p>
+                        Um espaço de escuta e acolhimento para você se reconectar consigo mesmo. Atendimento online, no seu idioma, com toda a compreensão cultural que você merece.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#contato" class="btn-primary">Agende uma Sessão Inicial</a>
+                        <a href="#como-funciona" class="btn-secondary">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <div class="visual-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">🇧🇷</div>
+                                <div class="stat-text">
+                                    <h3>100%</h3>
+                                    <p>Atendimento em português</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">💻</div>
+                                <div class="stat-text">
+                                    <h3>Online</h3>
+                                    <p>De qualquer lugar do Canadá</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">🤝</div>
+                                <div class="stat-text">
+                                    <h3>Acolhimento</h3>
+                                    <p>Compreensão cultural e escuta</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Por que escolher</span>
+                <h2>Um espaço seguro para sua mente</h2>
+                <p>Compreendo os desafios únicos de viver longe de casa. Vamos trabalhar juntos no seu processo de autoconhecimento.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Entendo sua Realidade</h3>
+                    <p>Conheço os desafios da imigração, a saudade, a adaptação cultural e o esforço de reconstruir a vida em outro país.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💬</div>
+                    <h3>No Seu Idioma</h3>
+                    <p>Expresse-se com liberdade em português, sem barreiras linguísticas que atrapalhem sua livre associação e seu processo analítico.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>Horários Flexíveis</h3>
+                    <p>Sessões online que se adaptam à sua rotina, incluindo horários noturnos e finais de semana.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Total Confidencialidade</h3>
+                    <p>Suas sessões são 100% privadas e seguem rigorosos padrões éticos de sigilo profissional.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Processo de Autoconhecimento</h3>
+                    <p>A psicanálise é um processo único para cada pessoa. Vamos trabalhar no seu tempo, respeitando suas descobertas e elaborações.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤲</div>
+                    <h3>Espaço de Escuta</h3>
+                    <p>Um lugar seguro onde você pode falar livremente, sem julgamentos, explorando seus conflitos internos e questões inconscientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="psychoanalysis-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Entenda melhor</span>
+                <h2>O que é Psicanálise?</h2>
+            </div>
+            
+            <div class="psychoanalysis-content">
+                <p>
+                    A psicanálise é um método de investigação do inconsciente, criado por Sigmund Freud, que busca compreender os processos mentais profundos que influenciam nossa vida, nossos relacionamentos e nosso sofrimento.
+                </p>
+                
+                <p>
+                    Diferente de outras abordagens terapêuticas, a psicanálise não busca resultados imediatos ou soluções prontas. Ela oferece um espaço de escuta onde você pode:
+                </p>
+                
+                <ul class="psychoanalysis-list">
+                    <li>Falar livremente sobre o que vier à mente</li>
+                    <li>Compreender padrões que se repetem em sua vida</li>
+                    <li>Dar sentido a sintomas e sofrimentos</li>
+                    <li>Elaborar conflitos internos e questões do passado</li>
+                    <li>Reconhecer desejos e angústias inconscientes</li>
+                </ul>
+                
+                <p>
+                    O processo analítico é único para cada pessoa. Não há um roteiro pré-definido - você é quem conduz sua própria descoberta, e o analista está ali para escutar, acolher e facilitar esse caminho de autoconhecimento.
+                </p>
+                
+                <div class="quote-box">
+                    <p>"A psicanálise não promete felicidade, mas oferece a possibilidade de você se conhecer melhor e viver de forma mais autêntica."</p>
+                </div>
+                
+                <h3 class="subsection-title">Por que fazer psicanálise longe de casa?</h3>
+                
+                <p>
+                    A experiência de imigração traz à tona questões profundas sobre identidade, pertencimento e reconstrução de si mesmo. A saudade, a adaptação cultural e o distanciamento da família frequentemente reativam conflitos antigos e criam novos.
+                </p>
+                
+                <p>
+                    Fazer análise em português, com alguém que compreende sua cultura, permite que você explore essas questões sem se perder em traduções - tanto linguísticas quanto emocionais.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Conheça</span>
+                <h2>Quem Sou Eu</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <!-- Substitua por sua foto real -->
+                        <div class="about-image-placeholder">📷</div>
+                        <!-- <img src="sua-foto.jpg" alt="Diego Scheid - Psicanalista"> -->
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Diego Scheid</h3>
+                    <p class="subtitle">Psicólogo e Psicanalista</p>
+                    
+                    <p>
+                        Olá, eu sou Diego Scheid.
+                    </p>
+                    
+                    <p>
+                        Sou Psicólogo formado pela UFPR, com Mestrado e Especialização em Psicanálise pela UFPR e PUC-PR, além de estudos continuados pela Associação Psicanalítica de Curitiba (APCWB). Atualmente sou professor e Coordenador do Curso de Psicologia na FAEC.
+                    </p>
+                    
+                    <p>
+                        Embora não tenha vivido pessoalmente a experiência da imigração, tenho contato próximo com esse tema através da minha família, que se mudou para o Canadá, e tudo que isso implica - as transformações, os desafios, as saudades e a coragem de reconstruir a vida em outro país.
+                    </p>
+                    
+                    <p>
+                        Esse contato me permite compreender as questões emocionais e culturais que envolvem a experiência de estar entre dois mundos, e oferecer um espaço de acolhimento para quem está vivendo essa jornada.
+                    </p>
+                    
+                    <div class="about-quote">
+                        <p>"Meu compromisso é oferecer um espaço seguro onde você possa se descobrir, se elaborar e encontrar suas próprias respostas."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simples e direto</span>
+                <h2>Como funciona</h2>
+                <p>Começar sua jornada de autoconhecimento é mais fácil do que você imagina.</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Entre em Contato</h3>
+                    <p>Preencha o formulário ou me mande uma mensagem no WhatsApp ou Instagram</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Sessão Inicial</h3>
+                    <p>Conhecemos um ao outro e conversamos sobre suas necessidades</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Agende Online</h3>
+                    <p>Escolha os melhores horários na sua agenda</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Início da Análise</h3>
+                    <p>Começamos o trabalho analítico no seu ritmo, construindo um espaço de confiança e escuta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Investimento</span>
+                <h2>Planos para você</h2>
+                <p>Escolha a opção que melhor se adapta ao seu momento e necessidades.</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Sessão Individual</h3>
+                    <div class="price">CAD 80 <span>/sessão</span></div>
+                    <ul class="pricing-features">
+                        <li>Sessão de 50 minutos</li>
+                        <li>Atendimento online via Zoom/Google Meet</li>
+                        <li>Espaço de escuta e elaboração</li>
+                        <li>Flexibilidade de agendamento</li>
+                    </ul>
+                    <a href="#contato" class="btn-primary">Agendar Sessão</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Mais Indicado</span>
+                    <h3>Análise Regular</h3>
+                    <div class="price">CAD 280 <span>/mês</span></div>
+                    <ul class="pricing-features">
+                        <li>4 sessões de 50 minutos</li>
+                        <li>Atendimento online</li>
+                        <li>Continuidade no processo analítico</li>
+                        <li>Prioridade no agendamento</li>
+                        <li>Acompanhamento mais aprofundado</li>
+                    </ul>
+                    <p class="pricing-note">Sessões regulares permitem um trabalho analítico mais consistente e elaborativo.</p>
+                    <a href="#contato" class="btn-primary">Começar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contato">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Agende sua sessão inicial</h2>
+                <p>Dê o primeiro passo para se conhecer melhor. Entre em contato e vamos conversar sobre como a psicanálise pode fazer sentido para você.</p>
+                <a href="https://wa.me/5541999999999" class="btn-primary">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-brand">Psicanálise BR</div>
+                    <p>Atendimento psicanalítico online em português para brasileiros no Canadá. Um espaço de escuta e acolhimento que compreende sua cultura e sua história.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/psicanalise.br" target="_blank">📷</a>
+                        <a href="https://wa.me/5541999999999" target="_blank">💬</a>
+                        <a href="mailto:diego@psicanalise.br">✉️</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#sobre">Sobre Mim</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Informações</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Psicanálise BR - Diego Scheid. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .step, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
